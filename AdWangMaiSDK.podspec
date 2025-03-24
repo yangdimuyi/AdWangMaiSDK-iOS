@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'WangMaiSDK/GDTAdapter/*.a'
      ss.dependency 'AdWangMaiSDK/AdSDk'
-     ss.dependency 'GDTMobSDK', '4.15.10'
+     ss.dependency 'GDTMobSDK', '4.15.30'
   end
   
   spec.subspec 'TanxAdapter' do |ss|
