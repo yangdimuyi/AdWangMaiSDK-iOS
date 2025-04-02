@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要满足HTTPS  [可选] 默认为NO
 @property (nonatomic, assign) BOOL secure;
  
-/// 底部自定义窗口  [可选]
+/// 底部自定义窗口  [可选]，不分预算不支持，如优酷。
 @property (nonatomic, weak) UIView *bottomView;
 
 /// cd以及cd版本号信息  [可选 媒体通过该参数传入caid]  
