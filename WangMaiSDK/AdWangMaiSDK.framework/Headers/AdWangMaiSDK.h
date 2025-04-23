@@ -40,3 +40,6 @@ FOUNDATION_EXPORT const unsigned char AdWangMaiSDKVersionString[];
 #import <AdWangMaiSDK/XAdOrdinaryVideoAd.h>
 #import <AdWangMaiSDK/XAdOrdinaryVideoAdDelegate.h>
 
+#import <AdWangMaiSDK/XAdWMNativeAd.h>
+#import <AdWangMaiSDK/XAdWMNativeAdData.h>
+#import <AdWangMaiSDK/XAdWMNativeAdDelegate.h>

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要满足HTTPS  [可选] 默认为NO
 @property (nonatomic, assign) BOOL secure;
  
-/// 底部自定义窗口  [可选]，不分预算不支持，如优酷。
+/// 底部自定义窗口  [可选]
 @property (nonatomic, weak) UIView *bottomView;
 
 /// cd以及cd版本号信息  [可选 媒体通过该参数传入caid]  
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSInteger)eCPM;
 
-/// 竞价成功上报，旺脉平台竞胜之后调用，需要在广告请求成功之后,展示之前调用，winInfo旺脉平台竞价获胜信息，可为nil。
+/// 竞价成功上报，脉盟平台竞胜之后调用，需要在广告请求成功之后,展示之前调用，winInfo脉盟平台竞价获胜信息，可为nil。
 /// @param winInfo 竞胜信息 字典类型
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;
 

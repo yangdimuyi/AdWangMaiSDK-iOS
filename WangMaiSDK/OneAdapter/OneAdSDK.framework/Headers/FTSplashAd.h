@@ -57,6 +57,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 代码位id
 @property (nonatomic, copy, nonnull) NSString *slotId;
 
+/**
+ 可传入自定义底部视图，需要设置视图宽高
+ key:kBottomView  value:UIView
+ */
 @property (nonatomic, copy, nullable) NSDictionary *extInfo;
 
 @property (nonatomic, weak) id<FTSplashAdDelegate> delegate;
