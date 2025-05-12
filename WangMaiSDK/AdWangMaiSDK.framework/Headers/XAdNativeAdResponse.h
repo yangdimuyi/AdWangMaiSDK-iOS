@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, NativeAdType) {
 @property (nonatomic,copy) NSString *adTitle;
 /// 简介
 @property (nonatomic,copy) NSString *adDescribe;
+/// logo图片url
+@property (nonatomic,copy) NSString *logoUrl;
 /// icon图片url
 @property (nonatomic,copy) NSString *iconURL;
 /// 广告图片URL
