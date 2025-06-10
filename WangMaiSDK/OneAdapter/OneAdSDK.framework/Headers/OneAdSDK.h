@@ -16,7 +16,14 @@ FOUNDATION_EXPORT const unsigned char OneAdSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <OneAdSDK/PublicHeader.h>
 
 #import <OneAdSDK/FTSDKConfig.h>
-#import <OneAdSDK/FTSplashAd.h>
 #import <OneAdSDK/FTSDKParams.h>
 #import <OneAdSDK/FTAdBidProtocol.h>
 #import <OneAdSDK/FTAdInfoObject.h>
+#import <OneAdSDK/FTVideoAdProtocol.h>
+
+#import <OneAdSDK/FTSplashAd.h>
+#import <OneAdSDK/FTInterstitialAd.h>
+#import <OneAdSDK/FTUnifiedNativeAd.h>
+#import <OneAdSDK/FTTVScheduleMgr.h>
+#import <OneAdSDK/FTRewardAd.h>
+

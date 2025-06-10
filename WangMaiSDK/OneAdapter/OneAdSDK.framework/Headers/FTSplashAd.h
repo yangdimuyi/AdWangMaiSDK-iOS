@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <OneAdSDK/FTAdBidProtocol.h>
-#import <OneAdSDK/FTAdInfoObject.h>
 
 NS_ASSUME_NONNULL_BEGIN
 @class FTSplashAd;
@@ -37,6 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 开屏广告点击关闭
 - (void)splashAdDidClose:(FTSplashAd *)splashAd;
 
+/// 开屏广告落地页即将关闭
+- (void)splashAdLandingPageWillDisappear:(FTSplashAd *)splashAd;
+/// 开屏广告落地页已经关闭
+- (void)splashAdLandingPageDidDisappear:(FTSplashAd *)splashAd;
+
 /// 开屏广告倒计时结束或者非点击关闭场景
 - (void)splashAdDidFinish:(FTSplashAd *)splashAd;
 
@@ -61,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
  可传入自定义底部视图，需要设置视图宽高
  key:kBottomView  value:UIView
  */
-@property (nonatomic, copy, nullable) NSDictionary *extInfo;
+@property (nonatomic, strong, nullable) NSDictionary *extInfo;
 
 @property (nonatomic, weak) id<FTSplashAdDelegate> delegate;
 

@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AdWangMaiSDK"
-  spec.version      = "7.1.1.10"
+  spec.version      = "7.1.1.13"
   spec.summary      = "AdWangMaiSDK is a SDK from WangMai providing AD service."
   spec.description  = <<-DESC
     AdWangMaiSDK is a SDK from WangMai providing AD service.
