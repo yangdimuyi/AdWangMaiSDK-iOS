@@ -24,10 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告标记 [可选]
 @property (nonatomic,copy) NSString *adTag;
 
-/// cd以及cd版本号信息  [可选 媒体通过该参数传入caid]  
-/// 数组内部为字典对象,Key为cd(参数)和version(版本号),对应的值均为字符串类型,示例:@{@"cd":@"",@"version":@""}
-@property (nonatomic, strong) NSArray *cdInfo;
-
 /// [必选]开发者需传入用来弹出目标页的ViewController
 @property (nonatomic, weak) UIViewController *controller;
 

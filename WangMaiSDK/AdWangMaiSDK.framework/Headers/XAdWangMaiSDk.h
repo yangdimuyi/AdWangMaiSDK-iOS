@@ -32,6 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @warning  初始化SDK前调用，否则有可能不生效
 - (void)setDeviceIDFA:(NSString *)idfa;
 
+/// 可传入caid
+/// @param cdInfo 参数数组，数组内部为字典对象,Key为cd(参数)和version(版本号),对应的值均为字符串类型,示例:@{@"cd":@"",@"version":@""}
+/// @warning  初始化SDK前调用，否则有可能不生效
+- (void)setCdInfo:(NSArray *)cdInfo;
+
 /// 开启个性化推荐广告,默认YES:开启
 /// @param enablePersonalized 开启个性化推荐广告
 /// @warning  初始化SDK前调用，否则有可能不生效
@@ -41,7 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param fileName 文件名称
 /// @warning  初始化SDK前传入，否则有可能不生效
 - (void)setLocalConfigFileName:(NSString *)fileName;
-
 
 + (instancetype)sharedInstance;
 
@@ -53,6 +57,16 @@ NS_ASSUME_NONNULL_BEGIN
  @param universalLink 小程序跳转所需universalLink,用于向微信注册应用
  */
 - (void)initWithAppToken:(NSString *)appToken appKey:(NSString *)appKey appId:(NSString *_Nullable)appId universalLink:(NSString *_Nullable)universalLink;
+
+/**
+  @brief 初始化SDK
+ @param appToken 平台生成的appToken
+ @param appKey 应用key
+ @param appId 小程序跳转所需appId,用于向微信注册应用
+ @param universalLink 小程序跳转所需universalLink,用于向微信注册应用
+ @param handler 初始化结果
+ */
+- (void)initWithAppToken:(NSString *)appToken appKey:(NSString *)appKey appId:(NSString *_Nullable)appId universalLink:(NSString *_Nullable)universalLink handler:(void(^)(BOOL success, NSError *error))handler;
 
 /// sdk版本号
 + (NSString *)sdkVersion;
