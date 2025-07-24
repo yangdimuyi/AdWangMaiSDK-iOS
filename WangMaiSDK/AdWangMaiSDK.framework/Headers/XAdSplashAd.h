@@ -45,6 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param winInfo 竞胜信息 字典类型
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;
 
+/// 获取当前广告物料
+/// material_url: 素材 url 数组
+- (NSDictionary *)getCurrentAdMaterialsInfo;
+
+/// 广告销毁（仅脉盟预算支持）
+- (void)destroy;
+
 @end
 
 NS_ASSUME_NONNULL_END

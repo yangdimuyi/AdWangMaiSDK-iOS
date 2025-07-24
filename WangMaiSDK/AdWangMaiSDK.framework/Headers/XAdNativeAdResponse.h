@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, NativeAdType) {
 @property (nonatomic,copy) NSString *iconURL;
 /// 广告图片URL
 @property (nonatomic,strong) NSArray *imagesURL;
+// 视频URL
+@property (nonatomic,copy) NSString *videoUrl;
 /// 物料类型
 @property (nonatomic,assign) NativeAdType adType;
 
