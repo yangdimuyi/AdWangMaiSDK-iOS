@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要满足HTTPS  [可选] 默认为NO
 @property (nonatomic,assign) BOOL secure;
 
+/// 是否屏蔽摇一摇，NO或者不赋值，不屏蔽，YES屏蔽
+@property (nonatomic, assign) BOOL disableShake;
+
 /// 广告标记 [可选]
 @property (nonatomic,copy) NSString *adTag;
 
@@ -48,7 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;
 
 /// 获取当前广告物料
-/// material_url: 素材 url 数组
+// material_url: 素材 url 数组
+// adTitle: 标题
+// adDescription:描述
+// crid:素材id/创意id
 - (NSDictionary *)getCurrentAdMaterialsInfo;
 
 @end

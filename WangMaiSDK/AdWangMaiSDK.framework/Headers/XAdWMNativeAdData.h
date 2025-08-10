@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) WMNativeAdType adType;
 // 交互类型
 @property (nonatomic,assign) WMAdInteractionType interaction_type;
-// 创意id
+// 素材id/创意id
 @property (nonatomic,nullable,copy) NSString *crid;
 // 标题
 @property (nonatomic,nullable,copy) NSString *adTitle;

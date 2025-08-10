@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, NativeAdType) {
 @property (nonatomic,strong) UIView *adVideoView;
 /// HTML视图
 @property (nonatomic,strong) UIView *adHTMLView;
+// 素材id/创意id
+@property (nonatomic,copy) NSString *crid;
 /// 标题
 @property (nonatomic,copy) NSString *adTitle;
 /// 简介

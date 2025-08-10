@@ -43,7 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;
 
 /// 获取当前广告物料
-/// material_url: 素材 url 数组
+// material_url: 素材 url 数组
+// adTitle: 标题
+// adDescription:描述
+// crid:素材id/创意id
 - (NSDictionary *)getCurrentAdMaterialsInfo;
 
 @end
