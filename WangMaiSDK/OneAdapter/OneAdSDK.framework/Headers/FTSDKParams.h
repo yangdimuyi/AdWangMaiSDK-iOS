@@ -39,4 +39,8 @@
 
 @property (nonatomic, strong, nullable) NSDictionary *extInfo;
 
+
+/// 是否打印本地log。(默认NO)
+@property (nonatomic, assign) BOOL logEnable;
+
 @end
