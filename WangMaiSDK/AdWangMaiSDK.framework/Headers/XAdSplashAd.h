@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否屏蔽摇一摇，NO或者不赋值，不屏蔽，YES屏蔽
 @property (nonatomic, assign) BOOL disableShake;
+
+/// 开屏广告停留时长（仅脉盟预算支持）
+@property (nonatomic, assign) NSInteger stayTime;
  
 /// 底部自定义窗口  [可选]
 @property (nonatomic, weak) UIView *bottomView;
