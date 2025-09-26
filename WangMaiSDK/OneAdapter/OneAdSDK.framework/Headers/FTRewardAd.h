@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 落地页即将关闭
 - (void)rewardAdLandingPageWillDisappear:(FTRewardAd *)rewardAd;
 /// 落地页已经关闭
-- (void)rewardAdLandingPageDidDisappear:(FTRewardAd *)rewardAd;
+- (void)rewardAdLandingPageDidDisappear:(FTRewardAd *)rewardAd interactionType:(FTAdInteractionType)type;;
 
 @end
 @interface FTRewardAd : NSObject<FTAdBidProtocol>

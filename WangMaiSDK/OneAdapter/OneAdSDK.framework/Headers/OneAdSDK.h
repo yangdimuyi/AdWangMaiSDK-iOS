@@ -26,4 +26,5 @@ FOUNDATION_EXPORT const unsigned char OneAdSDKVersionString[];
 #import <OneAdSDK/FTUnifiedNativeAd.h>
 #import <OneAdSDK/FTTVScheduleMgr.h>
 #import <OneAdSDK/FTRewardAd.h>
-
+#import <OneAdSDK/FTNativeTemplatedAd.h>
+#import <OneAdSDK/FTNativeTemplateView.h>

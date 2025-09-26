@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 落地页即将关闭
 - (void)unifiedNativeAdLandingPageWillClose:(FTUnifiedNativeAd *)unifiedNativeAd;
 /// 落地页已经关闭
-- (void)unifiedNativeAdLandingPageDidClose:(FTUnifiedNativeAd *)unifiedNativeAd;
+- (void)unifiedNativeAdLandingPageDidClose:(FTUnifiedNativeAd *)unifiedNativeAd interactionType:(FTAdInteractionType)type;
 
 @end
 @interface FTUnifiedNativeAd : NSObject<FTAdBidProtocol,FTVideoAdProtocol>
@@ -45,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<FTUnifiedNativeAdDelegate> delegate;
 
+@property (nonatomic, weak) UIViewController *containerVC;
 
 /**
  请求广告数据

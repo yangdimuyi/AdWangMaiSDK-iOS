@@ -9,6 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, FTAdInteractionType) {
+    FTAdInteractionWeb,
+    FTAdInteractionDownload,
+};
+
+
 typedef NS_ENUM(NSUInteger, FTAdBidLossReason)
 {
     FTAdBidLossLowPrice          = 1, //价格竞败

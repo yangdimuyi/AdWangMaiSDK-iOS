@@ -9,8 +9,9 @@
 
 typedef NS_ENUM(NSInteger, FTSDKInitState) {
     FTSDKInitStateDefault = 0,
-    FTSDKInitStateSuccessed = 1,
-    FTSDKInitStateFailed = 2
+    FTSDKInitStateLoading = 1,
+    FTSDKInitStateSuccessed = 2,
+    FTSDKInitStateFailed = 3
 };
 
 

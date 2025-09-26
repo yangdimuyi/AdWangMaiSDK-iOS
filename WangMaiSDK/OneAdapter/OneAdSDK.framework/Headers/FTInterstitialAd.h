@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <OneAdSDK/FTAdBidProtocol.h>
 NS_ASSUME_NONNULL_BEGIN
+
+
+
 @class FTInterstitialAd;
 @protocol FTInterstitialAdDelegate<NSObject>
 
@@ -46,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 落地页即将关闭
 - (void)interstitialAdLandingPageWillDisappear:(FTInterstitialAd *)interstitialAd;
 /// 落地页已经关闭
-- (void)interstitialAdLandingPageDidDisappear:(FTInterstitialAd *)interstitialAd;
+- (void)interstitialAdLandingPageDidDisappear:(FTInterstitialAd *)interstitialAd interactionType:(FTAdInteractionType)type;
 
 @end
 @interface FTInterstitialAd : NSObject<FTAdBidProtocol>
@@ -56,6 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 代码位id
 @property (nonatomic, copy, nonnull) NSString *slotId;
 
+/**
+ 可传入插屏背景图色值
+ key:kBgColor  value:UIColor
+ */
 @property (nonatomic, strong, nullable) NSDictionary *extInfo;
 
 @property (nonatomic, weak) id<FTInterstitialAdDelegate> delegate;
