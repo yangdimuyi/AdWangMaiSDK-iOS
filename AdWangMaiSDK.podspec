@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AdWangMaiSDK"
-  spec.version      = "7.5.2.21"
+  spec.version      = "7.5.2.22"
   spec.summary      = "AdWangMaiSDK is a SDK from WangMai providing AD service."
   spec.description  = <<-DESC
     AdWangMaiSDK is a SDK from WangMai providing AD service.
@@ -76,6 +76,14 @@ Pod::Spec.new do |spec|
      ss.resource  = "WangMaiSDK/OneAdapter/*.bundle"
      ss.dependency 'AdWangMaiSDK/AdSDk'
   end
+  
+  spec.subspec 'SigmobAdapter' do |ss|
+     ss.platform     = :ios, '11.0'
+     ss.vendored_libraries = 'WangMaiSDK/SigmobAdapter/*.a'
+     ss.dependency 'SigmobAd-iOS', '4.20.1'
+     ss.dependency 'AdWangMaiSDK/AdSDk'
+  end
+
   
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
