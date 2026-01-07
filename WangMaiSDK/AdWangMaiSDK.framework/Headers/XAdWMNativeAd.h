@@ -46,6 +46,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求广告
 - (void)loadAdData;
 
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
+
 /// 竞价成功上报，脉盟平台竞胜之后调用，需要在广告请求成功之后,展示之前调用，winInfo脉盟平台竞价获胜信息，可为nil。
 /// @param winInfo 竞胜信息 字典类型
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;

@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否屏蔽摇一摇，NO或者不赋值，不屏蔽，YES屏蔽
 @property (nonatomic, assign) BOOL disableShake;
 
+/// 是否屏蔽扭一扭，NO或者不赋值，不屏蔽，YES屏蔽
+@property (nonatomic, assign) BOOL disableTwist;
+
 /// 开屏广告停留时长（仅脉盟预算支持）
 @property (nonatomic, assign) NSInteger stayTime;
  
@@ -40,6 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载广告,只加载不展示,需要调用showAd展示广告
 /// - Parameter serverBidToken: 通过 Server Bidding 请求回来的 token  不使用Server Bidding时传 nil
 - (void)preloadAdDataWithServerBidToken:(NSString *_Nullable)serverBidToken;
+
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
 
 /// 展示广告
 /// @param window 应用的window窗口 [必传]

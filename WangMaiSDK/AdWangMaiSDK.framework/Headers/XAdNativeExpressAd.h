@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否屏蔽摇一摇，NO或者不赋值，不屏蔽，YES屏蔽
 @property (nonatomic, assign) BOOL disableShake;
 
+/// 是否屏蔽扭一扭，NO或者不赋值，不屏蔽，YES屏蔽
+@property (nonatomic, assign) BOOL disableTwist;
+
 /// 广告标记 [可选]
 @property (nonatomic,copy) NSString *adTag;
 
@@ -45,6 +48,12 @@ NS_ASSUME_NONNULL_BEGIN
  @return 成功返回一个大于等于0的值，-1表示无权限或后台出现异常
  */
 - (NSInteger)eCPM;
+
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
 
 /// 竞价成功上报，脉盟平台竞胜之后调用，需要在广告请求成功之后,展示之前调用，winInfo脉盟平台竞价获胜信息，可为nil。
 /// @param winInfo 竞胜信息 字典类型

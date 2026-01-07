@@ -37,6 +37,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loadAdData;
 
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
+
 /// 视图注册方法
 /// - Parameter clickableViews: 可点击的视图数组，此数组内的广告元素才可以响应广告对应的点击事件
 - (void)registerClickableViews:(NSArray<UIView *> *_Nonnull)clickableViews;

@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否屏蔽摇一摇，NO或者不赋值，不屏蔽，YES屏蔽
 @property (nonatomic, assign) BOOL disableShake;
 
+/// 是否屏蔽扭一扭，NO或者不赋值，不屏蔽，YES屏蔽
+@property (nonatomic, assign) BOOL disableTwist;
+
 /// 视频类型时，是否静音。默认 NO。loadAdData 前设置。
 @property (nonatomic, assign) BOOL videoMuted;
 
@@ -31,6 +34,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 请求广告
 - (void)loadAdData;
+
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
 
 /// 展示插屏广告
 /// @param controller 控制器

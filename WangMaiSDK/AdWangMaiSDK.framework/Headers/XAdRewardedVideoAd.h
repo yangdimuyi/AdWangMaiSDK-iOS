@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求广告
 - (void)loadAdData;
 
+/**
+ 广告是否有效
+ @return 广告有效返回YES  广告无效返回NO
+ */
+- (BOOL)isReady;
+
 /// 展示广告方法
 /// @param rootViewController 用于 present 激励视频 VC
 - (void)showAdFromRootViewController:(UIViewController *)rootViewController;
