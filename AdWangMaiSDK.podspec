@@ -65,7 +65,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'QuMengAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'WangMaiSDK/QuMengAdapter/*.a'
-     ss.dependency 'QuMengAdSDK', '1.3.8'
+     ss.dependency 'QuMengAdSDK', '1.3.8.35'
      ss.dependency 'AdWangMaiSDK/AdSDk'
   end
   
