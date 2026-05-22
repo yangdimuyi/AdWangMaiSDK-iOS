@@ -32,7 +32,3 @@ FOUNDATION_EXPORT const unsigned char AdWangMaiSDKVersionString[];
 #import <AdWangMaiSDK/XAdNativeAd.h>
 #import <AdWangMaiSDK/XAdNativeAdResponse.h>
 #import <AdWangMaiSDK/XAdNativeDelegete.h>
-
-#import <AdWangMaiSDK/XAdWMNativeAd.h>
-#import <AdWangMaiSDK/XAdWMNativeAdData.h>
-#import <AdWangMaiSDK/XAdWMNativeAdDelegate.h>
