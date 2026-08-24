@@ -27,5 +27,16 @@ typedef NS_ENUM(NSInteger, FTSDKInitState) {
 
 //查询sdk版本号
 + (nullable NSString *)getSdkVersion;
+
+/**
+ *  获取用于 Server Bidding 请求的竞价 Token。
+ *
+ *  @note 调用前需确保已进行SDK初始化（详见接入文档）
+ *
+ *  @param slotId 广告代码位 ID，不可为空
+ *  @return 加密后的竞价 Token 字符串；若SDK未初始化或相关参数无效，则会返回 nil
+ */
++ (nullable NSString *)getBiddingTokenWithSlotId:(nonnull NSString *)slotId;
+
 @end
 

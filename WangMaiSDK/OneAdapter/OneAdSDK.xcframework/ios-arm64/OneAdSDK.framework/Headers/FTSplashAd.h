@@ -34,15 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 开屏广告点击
 - (void)splashAdDidClick:(FTSplashAd *)splashAd;
 
-/// 开屏广告点击关闭
-- (void)splashAdDidClose:(FTSplashAd *)splashAd;
+/// 开屏广告跳过
+- (void)splashAdDidSkip:(FTSplashAd *)splashAd;
 
+/// 开屏广告倒计时结束（广告自动关闭）
+- (void)splashAdDidFinish:(FTSplashAd *)splashAd;
+
+/// 开屏广告关闭（包含点击广告+点击跳过+倒计时结束自动关闭等所有关闭情况）
+- (void)splashAdDidClose:(FTSplashAd *)splashAd;
 
 /// 开屏广告落地页已经关闭
 - (void)splashAdLandingPageDidDisappear:(FTSplashAd *)splashAd interactionType:(FTAdInteractionType)type;
-
-/// 开屏广告倒计时结束或者非点击关闭场景
-- (void)splashAdDidFinish:(FTSplashAd *)splashAd;
 
 /// 开屏广告视频播放完成或者报错.
 - (void)splashVideoAdDidPlayFinish:(FTSplashAd *)splashAd didFailWithError:(NSError *_Nullable)error;
@@ -63,12 +65,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 //@property (nonatomic, weak) UIViewController *containerVC;
 /**
- 可传入自定义底部视图，需要设置视图宽高
+ 1.可传入自定义底部视图，需要设置视图宽高
  key:kBottomView  value:UIView
+ 2. key:@"autoLocateTopVC" 是否由SDK自主查找顶层VC弹出落地页，  value:@"1" :自主查找,   value值不为@"1"时由传入的viewController弹出落地页
  */
 @property (nonatomic, strong, nullable) NSDictionary *extInfo;
 
 @property (nonatomic, weak) id<FTSplashAdDelegate> delegate;
+
+/**
+ *  S2S bidding后获取到token再调用此方法加载广告
+ *  @param token  通过Server Bidding请求回来的token
+ */
+- (void)loadAdWithToken:(NSString *)token;
 
 /**
  请求广告数据并展示
@@ -88,8 +97,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  获取广告价格，单位：分
  请在广告素材加载成功之后调用，即splashAdLoadSuccess回调之后
+ 注意：此方法仅为客户端竞价使用
  */
 - (NSString *)getECPM;
+
+/**
+ 获取广告数据
+ */
+- (NSDictionary *)getAdExtInfo;
 
 @end
 

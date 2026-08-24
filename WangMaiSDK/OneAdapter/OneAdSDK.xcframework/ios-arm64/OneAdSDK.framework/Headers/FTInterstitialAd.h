@@ -82,11 +82,18 @@ NS_ASSUME_NONNULL_BEGIN
  请在广告素材加载成功之后调用，即interstitialAdLoadSuccess 或者 interstitialAdVideoDownloadSuccess回调之后
  */
 - (void)showInterstitialViewInRootViewController:(UIViewController *)viewController;
+
 /**
  获取广告价格，单位：分
  请在广告素材加载成功之后调用，即splashAdLoadSuccess回调之后
  */
 - (NSString *)getECPM;
+
+/**
+ 获取广告数据
+ */
+- (NSDictionary *)getAdExtInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END

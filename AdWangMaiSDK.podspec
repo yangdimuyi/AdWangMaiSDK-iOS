@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AdWangMaiSDK"
-  spec.version      = "7.9.4.38"
+  spec.version      = "8.0.0.0"
   spec.summary      = "AdWangMaiSDK is a SDK from WangMai providing AD service."
   spec.description  = <<-DESC
     AdWangMaiSDK is a SDK from WangMai providing AD service.
@@ -40,28 +40,6 @@ Pod::Spec.new do |spec|
     ss.libraries = "z","resolv.9","xml2","c++","c++abi","z.1.2.5","sqlite3.0","sqlite3","bz2.1.0","bz2","iconv","resolv"
   end
   
-  spec.subspec 'JDYunAdapter' do |ss|
-     ss.platform     = :ios, '11.0'
-     ss.vendored_libraries = 'WangMaiSDK/JDYunAdapter/*.a'
-     ss.dependency 'AdWangMaiSDK/AdSDk'
-     ss.dependency 'JADYun', '2.6.8'
-     ss.dependency 'JADYunMotion', '2.6.8'
-  end
-  
-  spec.subspec 'GDTAdapter' do |ss|
-     ss.platform     = :ios, '11.0'
-     ss.vendored_libraries = 'WangMaiSDK/GDTAdapter/*.a'
-     ss.dependency 'AdWangMaiSDK/AdSDk'
-     ss.dependency 'GDTMobSDK', '4.15.30'
-  end
-  
-  spec.subspec 'TanxAdapter' do |ss|
-     ss.platform     = :ios, '12.0'
-     ss.vendored_libraries = 'WangMaiSDK/TanxAdapter/*.a'
-     ss.dependency 'TanxSDK', '3.7.21'
-     ss.dependency 'AdWangMaiSDK/AdSDk'
-  end
-  
   spec.subspec 'QuMengAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'WangMaiSDK/QuMengAdapter/*.a'
@@ -72,7 +50,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'OneAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'WangMaiSDK/OneAdapter/*.a'
-     ss.ios.vendored_frameworks = 'WangMaiSDK/OneAdapter/*.framework'
+     ss.ios.vendored_frameworks = 'WangMaiSDK/OneAdapter/*.xcframework'
      ss.resource  = "WangMaiSDK/OneAdapter/*.bundle"
      ss.dependency 'AdWangMaiSDK/AdSDk'
   end

@@ -105,6 +105,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)rewardAdClose;
 
+/**
+ 获取广告数据
+ */
+- (NSDictionary *)getAdExtInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
