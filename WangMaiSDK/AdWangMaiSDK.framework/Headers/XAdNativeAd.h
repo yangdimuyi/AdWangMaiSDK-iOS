@@ -32,10 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter adSlotId: 广告位ID
 - (instancetype)initWithAdSlotId:(NSString *)adSlotId;
 
-/**
- 加载广告数据
- */
+/// 加载普通广告数据；首次调用后实例固定为普通模式，不能再接收 S2S Response。
+/// 请求进行中重复调用不会启动新请求或触发本次 LoadError；启用 Debug 日志时输出提示。
+/// 当前请求成功或失败后，允许再次调用同模式加载。
 - (void)loadAdData;
+
+/// 生成 S2S Token。
+- (nullable NSString *)getS2STokenWithAdSlotId:(NSString *)adSlotId;
+
+/// 加载 S2S 广告。接收媒体服务器返回的 S2S JSON。
+- (void)loadAdm:(NSString *)adm;
 
 /// 获取当前广告请求 ID，请求尚未发起时返回 nil。
 - (nullable NSString *)getRequestId;

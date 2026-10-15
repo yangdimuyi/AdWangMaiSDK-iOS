@@ -39,14 +39,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameter adSlotId: 广告位id
 - (instancetype)initWithAdSlotId:(NSString *)adSlotId;
 
-/// 获取用于 Server Bidding 请求SDK侧相关请求参数信息
-/// - Parameter adSlotId: 广告位id
-- (NSString *)getBuyerIdWithAdSlotId:(NSString *)adSlotId;
+/// 普通广告加载；首次调用后实例固定为普通模式，不能再接收 S2S Response。
+/// 请求进行中重复调用不会启动新请求或触发本次 LoadError；启用 Debug 日志时输出提示。
+/// 当前请求成功或失败后，允许再次调用同模式加载。
+/// 只加载不展示，成功后调用 showAdInWindow:。
+- (void)loadAdData;
 
-/// 加载广告,只加载不展示,需要调用showAd展示广告
-/// - Parameter serverBidToken: 通过 Server Bidding 请求回来的 token  不使用Server Bidding时传 nil
-- (void)preloadAdDataWithServerBidToken:(NSString *_Nullable)serverBidToken;
+/// 生成 S2S Token。
+- (nullable NSString *)getS2STokenWithAdSlotId:(NSString *)adSlotId;
 
+/// 加载 S2S 广告。接收媒体服务器返回的 S2S JSON。
+- (void)loadAdm:(NSString *)adm;
+
+/// 已废弃；该方法不再发起请求并始终返回 nil，同时通过 splashOnError: 返回迁移提示。
+/// 请使用 getS2STokenWithAdSlotId: 生成新版 S2S Token。
+- (nullable NSString *)getBuyerIdWithAdSlotId:(NSString *)adSlotId __attribute__((deprecated("请使用 getS2STokenWithAdSlotId: 和 loadAdm:")));
+
+/// 已废弃；该方法对 nil 和非 nil 参数均不发起请求，同时通过 splashOnError: 返回迁移提示。
+/// 普通加载请使用 loadAdData，S2S 请使用 loadAdm:。
+- (void)preloadAdDataWithServerBidToken:(nullable NSString *)serverBidToken __attribute__((deprecated("请使用 loadAdData 或 loadAdm:")));
 /**
  广告是否有效
  @return 广告有效返回YES  广告无效返回NO
@@ -64,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSInteger)eCPM;
 
-/// 竞价成功上报，脉盟平台竞胜之后调用，需要在广告请求成功之后,展示之前调用，winInfo脉盟平台竞价获胜信息，可为nil。（使用 Server Bidding 时，竞胜竞败由Server处理。不用调用该方法）
+/// 竞价成功上报，脉盟平台竞胜之后调用，需要在广告请求成功之后、展示之前调用，winInfo 为可空的竞胜信息；新版 S2S 由服务端完成竞胜竞败，无需调用。
 /// @param winInfo 竞胜信息 字典类型
 - (void)sendWinNotificationWithInfo:(NSDictionary *_Nullable)winInfo;
 

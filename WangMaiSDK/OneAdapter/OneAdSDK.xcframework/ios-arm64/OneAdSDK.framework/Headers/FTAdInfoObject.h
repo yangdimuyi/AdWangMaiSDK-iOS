@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *subTitle;
 
 @property (nonatomic, copy) NSString *videoUrl;//视频素材地址
+@property (nonatomic, copy) NSString *videoCoverImageUrl;//视频封面图地址
 @property (nonatomic, assign) NSInteger videoDuration;//视频时⻓，秒
 @property (nonatomic, assign) NSInteger videoSize;//视频⼤⼩
 @property (nonatomic, assign) NSInteger videoWidth;

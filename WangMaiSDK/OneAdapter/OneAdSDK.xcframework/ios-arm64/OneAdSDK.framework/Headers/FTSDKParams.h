@@ -32,6 +32,8 @@
 @property (nonatomic, assign) BOOL forbidPersonalizedAds;
 /// 是否禁用程序化推荐广告。(默认NO)
 @property (nonatomic, assign) BOOL forbidProgrammaticRecommend;
+/// 是否禁用摇一摇。(默认NO)
+@property (nonatomic, assign) BOOL forbidShake;
 /// 经度
 @property (nonatomic, copy, nullable) NSString *longitude;
 /// 纬度
@@ -39,6 +41,7 @@
 
 @property (nonatomic, strong, nullable) NSDictionary *extInfo;
 
+@property (nonatomic, strong, nullable) NSString *adIconUrl;
 
 /// 是否打印本地log。(默认NO)
 @property (nonatomic, assign) BOOL logEnable;

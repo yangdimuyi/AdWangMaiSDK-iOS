@@ -35,6 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 请求广告
 - (void)loadAdData;
 
+/// 生成 S2S Token。
+- (nullable NSString *)getS2STokenWithAdSlotId:(NSString *)adSlotId;
+
+/// 加载 S2S 广告。接收媒体服务器返回的 S2S JSON。
+- (void)loadAdm:(NSString *)adm;
+
 /// 获取当前广告请求 ID，请求尚未发起时返回 nil。
 - (nullable NSString *)getRequestId;
 

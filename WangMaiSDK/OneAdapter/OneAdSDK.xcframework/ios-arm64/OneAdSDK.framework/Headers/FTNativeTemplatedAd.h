@@ -56,7 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nonnull) NSString *slotId;
 
 /* 广告视图尺寸
-模版信息流的尺寸adSize建议宽度设置为屏宽 高度平台勾选的高度 不要随意设置尺寸大小否则有可能出现拉取失败或者广告变形的情况
+模版信息流的尺寸adSize建议宽度设置为屏宽 高度设置为0或者设置平台勾选的高度 不要随意设置尺寸大小否则有可能出现拉取失败或者广告变形的情况
+沉浸流模版尺寸完全按照传入adSize的值去渲染
  */
 @property (nonatomic,assign) CGSize adSize;
 
